@@ -1,0 +1,30 @@
+<ul>
+  <li *ngFor="let user of users">{{ user }}</li>
+</ul>
+
+<div>
+  Enter Number :<input type="number" [(ngModel)]="num" />
+
+  <div [ngSwitch]="num">
+    <div *ngSwitchCase="1">you selected One</div>
+    <div *ngSwitchCase="2">you selected two</div>
+    <div *ngSwitchCase="3">you selected three</div>
+    <div *ngSwitchCase="4">you selected four</div>
+    <div *ngSwitchDefault>you selected nothing</div>
+  </div>
+
+  <div>
+    Enter Number :
+    <select [(ngModel)]="sv1">
+      <option *ngFor="let item of items" [value]="item.name">
+        {{ item.name }}
+      </option>
+    </select>
+
+    <div [ngSwitch]="sv1">
+      <div *ngSwitchCase="'admin'">you selected admin</div>
+      <div *ngSwitchCase="'manager'">you selected manager</div>
+      <div *ngSwitchCase="'HR'">you selected HR</div>
+    </div>
+  </div>
+</div>
